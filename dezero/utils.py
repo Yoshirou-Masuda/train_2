@@ -44,7 +44,7 @@ def plot_dot_graph(output, verbose=True, to_file='graph.png'):
     dot_graph = get_dot_graph(output, verbose)
 
     # dotデータをファイルに保存
-    tmp_dir = os.path.join(os.path.expaunduser('~'), '.dezero')
+    tmp_dir = os.path.join(os.path.expanduser('~'), '.dezero')
     if not os.path.exists(tmp_dir): #dezeroディレクトリがなかったら作成
         os.mkdir(tmp_dir)
     graph_path = os.path.join(tmp_dir, 'tmp_graph.dot')
