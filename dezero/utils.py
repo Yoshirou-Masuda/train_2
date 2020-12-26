@@ -2,6 +2,16 @@ import os
 import subprocess
 
 
+def _dot_var(v, verbose=False):
+    dot_var = '{} [label="{}", color=orange, style=fillde]\n'
+
+    name = '' if v.name is None else v.name
+    if verbose and v.data is not None:
+        if v.name is not None:
+            name += ': '
+        name += str(v.shape) + ' ' + str(v.dtype)
+    return dot_var.format(id(v), name)
+
 #DOT言語に変換
 def _dot_func(f):
     dot_func = '{} [label="{}", color=lightblue, style=filled, shape=box]\n'
