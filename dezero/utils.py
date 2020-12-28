@@ -38,18 +38,18 @@ def get_dot_graph(output, verbose=True):
             # funcs.sort(key=lambda x: x.generation)
             seen_set.add(f)
         
-        add_func(output.creator)
-        txt += _dot_var(output, verpose)
+    add_func(output.creator)
+    txt += _dot_var(output, verpose)
 
-        while funcs:
-            func = funcs.pop()
-            txt += _dot_func(func)
-            for x in func.inputs:
-                txt += _dot_var(x, verbose)
+    while funcs:
+        func = funcs.pop()
+        txt += _dot_func(func)
+        for x in func.inputs:
+            txt += _dot_var(x, verbose)
 
-                if x.creator is not None:
-                    add_func(x.creator)
-        return 'digraph g {\n' + txt + '}' 
+            if x.creator is not None:
+                add_func(x.creator)
+    return 'digraph g {\n' + txt + '}' 
 
 #画像かまでを含めた変換
 def plot_dot_graph(output, verbose=True, to_file='graph.png'):
