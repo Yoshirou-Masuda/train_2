@@ -39,7 +39,7 @@ def get_dot_graph(output, verbose=True):
             seen_set.add(f)
         
     add_func(output.creator)
-    txt += _dot_var(output, verpose)
+    txt += _dot_var(output, verbose)
 
     while funcs:
         func = funcs.pop()
