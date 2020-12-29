@@ -25,6 +25,6 @@ class Cos(Function):
         gx = gy * -sin(x)
         return gx
 
-    def cos(x) :
+    def cos(x):
         return Cos()(x)  
 
