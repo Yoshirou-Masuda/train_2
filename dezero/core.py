@@ -1,7 +1,7 @@
 import numpy as np
 import contextlib
 import weakref
-
+import dezero
 
 # =============================================================================
 # Config
