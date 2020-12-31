@@ -96,7 +96,7 @@ class Variable:
     
     @property
     def T(self):
-        return dezero.functions.transopose(self)
+        return dezero.functions.transpose(self)
     
     @property
     def shape(self):
