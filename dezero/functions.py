@@ -83,7 +83,7 @@ def transpose(x, axes=None):
 
 
 class Sum(Function):
-    def __init__(self, axis, keepdims)
+    def __init__(self, axis, keepdims):
         self.axis = axis
         self.keepdims = keepdims
        
