@@ -109,7 +109,7 @@ class BroadcastTo(Function):
         y = np.broadcast_to(x, self.shape)
         return y
     
-    ded backward(self, gy):
+    def backward(self, gy):
         gx = sum_to(gy, self.x_shape)
         return gx
 
