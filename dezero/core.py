@@ -129,7 +129,8 @@ class Variable:
     def __add__(self, other):
         return add(self, other)
 
-
+    def sum(self, axis=None, keepdims=False):
+        return dezero.functions.sum(self, axis, keepdims)
 
 def as_array(x):
     if np.isscalar(x):
