@@ -1,7 +1,7 @@
 import numpy as np
-from dezero.core import Function
-from dezero.core import as_variable
+import dezero
 from dezero import utils
+from dezero.core import Function, Variable, as_variable, as_array
 
 class Sin(Function):
     def forward(self, x):
