@@ -34,22 +34,6 @@ class Tanh(Function):
         y = np.tanh(x)
         return y
 
-class Transpose(Function):
-    def forward(self, x):
-        y = np.transpose(x)
-        return y
-    
-    def backward(self, gy):
-        gx = transpose(gy)
-        return gy
-
-def transpose(x):
-    return Transpose()(x)
-    def backward(self, gy):
-        y = self.outputs[0]()
-        gx = gy * (1 - y * y)
-        return gx
-
 def tanh(x):
     return Tanh()(x)
 
@@ -70,3 +54,20 @@ def reshape(x, shape):
     if x.shape == shape:
         return as_variable(x)
     return Reshape(shape)(x)
+
+
+class Transpose(Function):
+    def forward(self, x):
+        y = np.transpose(x)
+        return y
+    
+    def backward(self, gy):
+        gx = transpose(gy)
+        return gy
+
+def transpose(x):
+    return Transpose()(x)
+    def backward(self, gy):
+        y = self.outputs[0]()
+        gx = gy * (1 - y * y)
+        return gx
