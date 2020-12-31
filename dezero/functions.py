@@ -100,6 +100,8 @@ class Sum(Function):
 def sum(x, axis=None, keepdims=False):
     return Sum(axis, keepdims)(x)
 
+
+
 class BroadcastTo(Function):
     def __init__(self, shape):
         self.shape = shape
@@ -118,6 +120,7 @@ def broadcast_to(x, shape):
         return as_variable(x)
     return BroadcastTo(shape)(x)
 
+
 class SumTo(Function):
     def __init__(self, shape):
         self.shape = shape
@@ -135,4 +138,5 @@ def sum_to(x, shape):
     if x.shape == shape:
         return as_variable(x)
     return SumTo(shape)(x)
-    
+
+
