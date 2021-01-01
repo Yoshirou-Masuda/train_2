@@ -155,10 +155,13 @@ class Variable:
     def to_gpu(self):
         if self.data is not None:
             self.data = dezero.cuda.as_cupy(self.data)    
-    
-def as_array(x):
+
+class Parameter(Variable):
+    pass            
+            
+def as_array(x, array_module=np):
     if np.isscalar(x):
-        return np.array(x)
+        return array_module.array(x)
     return x
 
 def as_variable(obj):
