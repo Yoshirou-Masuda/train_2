@@ -131,7 +131,7 @@ class SumTo(Function):
         return y
     
     def backward(self, gy):
-        gx = broadcast_to(gy, self.shape)
+        gx = broadcast_to(gy, self.x_shape)
         return gx
 
 def sum_to(x, shape):
