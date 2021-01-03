@@ -22,4 +22,6 @@ else:
   import dezero.utils
   import dezero.functions
   
+  from dezero.models import Model
+  
 setup_variable()
