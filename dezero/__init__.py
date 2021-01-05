@@ -23,5 +23,6 @@ else:
   import dezero.functions
   
   from dezero.models import Model
+  from dezero.dataloaders import DataLoader
   
 setup_variable()
