@@ -18,6 +18,8 @@ else:
   from dezero.core import as_variable
   from dezero.core import setup_variable
   from dezero.core import Parameter  
+  from dezero.core import Config
+  from dezero.core import test_mode
   
   import dezero.utils
   import dezero.functions
